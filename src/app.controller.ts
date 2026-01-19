@@ -6,7 +6,10 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  health() {
+    return {
+      status: 'OK',
+      message: 'API Paggo OCR Case is Running',
+    };
   }
 }
