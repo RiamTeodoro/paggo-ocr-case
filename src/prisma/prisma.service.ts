@@ -9,17 +9,26 @@ export class PrismaService
     implements OnModuleInit, OnModuleDestroy {
 
     constructor() {
+       if (process.env.NODE_ENV ! == 'production') {
         const adapter = new PrismaBetterSqlite3({
             url: "file:./dev.db",
         });
         super({adapter});
-    };
+      } else {
+        super();
+      }   
+    }
     
     async onModuleInit() {
-        await this.$connect();
+        if(process.env.NODE_ENV !== 'production'){
+            await this.$connect();
+
+        }
     }
 
     async onModuleDestroy() {
-        await this.$disconnect();
+        if (process.env.NODE_ENV !== 'production'){
+            await this.$disconnect();
+        }
     }
 }
