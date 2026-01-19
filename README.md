@@ -1,3 +1,4 @@
+
 Paggo OCR Case
 Projeto backend em desenvolvimento para desafio técnico.
 
@@ -16,7 +17,9 @@ Tecnologias utilizadas
 - API REST
 
 Status do projeto
-🚧 Em desenvolvimento
+Em desenvolvimento
 
 Observações
 Este repositório representa a evolução incremental do desafio.
+
+
